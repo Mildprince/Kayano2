@@ -1,0 +1,490 @@
+*{
+    font-family: 'Inter', sans-serif;
+  }
+
+:root {
+    --step--2: clamp(0.7813rem, 0.7747rem + 0.0326vw, 0.8rem);
+    --step--1: clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem);
+    --step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+    --step-1: clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem);
+    --step-2: clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem);
+    --step-3: clamp(1.944rem, 1.771rem + 0.8651vw, 2.4414rem);
+    --step-4: clamp(2.3328rem, 2.0827rem + 1.2504vw, 3.0518rem);
+    --step-5: clamp(2.7994rem, 2.4462rem + 1.7658vw, 3.8147rem);
+    --step-6: clamp(3.3592rem, 2.8691rem + 2.4507vw, 4.7684rem);
+    --step-7: clamp(4.0311rem, 3.36rem + 3.3555vw, 5.9605rem);
+    --step-8: clamp(4.8373rem, 3.9283rem + 4.5448vw, 7.4506rem);
+    --step-9: clamp(5.8048rem, 4.5844rem + 6.1017vw, 9.3132rem);
+    --step-10: clamp(6.9657rem, 5.3393rem + 8.1319vw, 11.6415rem);
+}
+
+.englishContent {
+    display: none;
+}
+
+.japaneseContent {
+    display: block;
+}
+
+/* When English is active */
+body.english .englishContent {
+    display: block;
+}
+
+body.english .japaneseContent {
+    display: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* resets button styling */
+
+button{
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    box-shadow: none;
+
+    -moz-appearance: none;
+    appearance: none;
+    display: inline-flex; /* Change from default */
+    align-items: center;
+    justify-content: center;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.japaneseContent{
+    font-size: var(--step--1);
+}
+
+/* nav styling */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2% 0;
+    position: fixed;
+    background-color:#515235;
+    height: auto;
+    width: 100%
+}
+
+nav button, nav a {
+    color: white;
+    width: auto;
+    padding: 8px 16px; /* Changed from 5% */
+    margin: 8px; /* Changed from 2% 5% */
+    border-radius: 7px;
+    text-decoration: none;
+    
+    /* Firefox fixes */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    min-width: 0;
+    box-sizing: border-box;
+    white-space: nowrap; /* Prevent text wrapping */
+
+    min-height: 44px;
+    line-height: 1.2;
+    vertical-align: top;
+
+    text-align: center; /* Add this */
+    vertical-align: middle; /* Add this */
+}
+
+nav #buttons {
+    display: flex;
+    width: auto;
+    justify-self: end;
+    align-items: center;
+    gap: 8px; /* Use gap instead of margins for better control */
+    margin-right: 1%;
+}
+
+/* Remove margins when using gap */
+nav #buttons button,
+nav #buttons a {
+    margin: 0;
+}
+
+nav .japaneseContent, nav .englishContent, nav button{
+    display: flex;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* Add this for Firefox */
+}
+
+nav .japaneseContent{
+    width: 200px;
+}
+
+nav .englishContent{
+   width: 200px;
+    text-align: center;
+}
+
+nav img{
+    width: 10%;
+    height: 10%;
+    padding-left: 1%;
+}
+
+#toggleButton{
+    background-color: #989274;
+    padding: auto;
+}
+
+#toggleButton:hover{
+    background-color: #DDD3C0;
+}
+
+#contact{
+    background-color: #C4915A;
+    width: auto;
+}
+
+#contact:hover{
+    background-color: #DDD3C0;
+}
+
+/* main styling */
+
+main {
+    background-color: #DDD3C0;
+    display: grid;
+    grid-template: repeat(5, auto) / auto;
+}
+
+h1{
+    font-size: var(--step-5);
+    font-weight: bold;
+}
+
+p{
+    font-size: var(--step-0);
+}
+
+#introduction {
+    display: grid;
+    grid-template: auto / repeat(3, 1fr);
+    background-color: #989274;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    
+}
+
+#introduction img{
+    grid-area: 1 / 1 / 2 / 2;
+    width: 100%;
+    
+}
+
+#introduction aside{
+    grid-area: 1 / 2 / 2 / 4;
+    padding: 0 15% ;
+}
+
+/*information section*/
+
+.info {
+    display: grid;
+    grid-template: auto / repeat(3, 1fr);
+    color:#989274;
+    justify-content: center;
+    align-items: center;
+    margin: 5%;
+    border: #C4915A 5px solid;
+}
+
+.info img{
+    grid-area: 1 / 1 / 2 / 2;
+    width: 100%;
+    height: auto;
+    padding: 10%;
+}
+
+.info aside {
+    grid-area: 1 / 2 / 2 / 4;
+    padding: 0 10%;
+}
+
+/* kayano section */
+
+#bio{
+    background-color:#515235;
+}
+
+#Kayano{
+    display: grid;
+    grid-template: auto / repeat(3, 1fr);
+    color:white;
+    justify-content: center;
+    align-items: center;
+    margin: 5%;
+    background-color:#515235;
+}
+
+#Kayano img{
+    grid-area: 1 / 1 / 2 / 2;
+    width: 100%;
+    height: auto;
+    padding: 10%;
+}
+
+#Kayano aside {
+    grid-area: 1 / 2 / 2 / 4;
+    padding: 0 20%;
+}
+
+/* footer */
+
+footer{
+    background-color:#989274;
+    display: grid;
+    grid-template: auto / repeat(2, 1fr);
+}
+
+address{
+    color: white;
+    grid-area: 1 / 1 / 2 / 2;
+    margin: auto;
+}
+
+address p {
+    font-size: var(--step-0);
+}
+
+address img{
+    margin: 25% 0;
+    width: 120%;
+}
+
+form{ 
+    grid-area: 1 / 2 / 2 / 3;
+    display: flex;
+    flex-direction:column;
+    margin: 5% auto;
+    color: white;
+    width: auto;
+    width: 80%;
+}
+
+form button{
+    color: white;
+    width: 25%;
+    padding: 2%;
+    margin: 2% 0;
+    border-radius: 7px;
+    background-color: #C4915A;
+}
+
+form button:hover{
+    background-color: #DDD3C0;
+}
+
+input, textarea{
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px white solid; 
+    margin: 2% 0;
+    padding: 2%;
+    font-size: var(--step-0);
+    display: block;
+    width: 100%;
+}
+
+textarea{
+    margin: 4% 0;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: white;
+}
+
+
+@media (max-width: 1175px) {
+    h1{
+        font-size: var(--step-3);
+    }
+    p{
+        font-size: var(--step--2);
+    }
+    nav img{
+        min-width: 120px;
+    }
+
+    form button{
+        width: 35%;
+     }
+
+}
+
+@media (max-width: 775px) {
+
+        /*introduction*/
+    #introduction {
+        grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+    }
+    
+    #introduction img{
+        grid-area: 1 / 1 / 2 / 4;
+        object-fit: cover;
+        height: 500px;
+        object-position: 25% 25%;
+    }
+
+    #introduction aside{
+        grid-area: 2 / 1 / 3 / 4;
+        text-align: center;
+        margin: auto;
+    }
+
+    h1{
+        font-size: var(--step-5);
+    }
+
+    p{
+        font-size: var(--step-0);
+    }
+    /*information section*/
+
+    .info {
+        grid-template: repeat(2, 1fr)/ auto;
+    }
+
+    #practice{
+        grid-template: 1fr 2fr/ auto;
+    }
+
+    .info img{
+        grid-area: 1 / 1 / 2 / 2;
+        width: 75%;
+        margin: auto;
+    }
+
+    .info aside {
+        grid-area: 2 / 1 / 3 / 2;
+        text-align: center;
+    }
+
+    /* kayano section */
+
+    #Kayano{
+        grid-template: repeat(2, 1fr) / auto;
+    }
+
+    #Kayano img{
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    #Kayano aside {
+        grid-area: 2 / 1 / 3 / 2;
+        text-align: center;
+        padding: 0 5%;
+    }
+
+    /* footer */
+
+    footer{
+        grid-template: repeat(2, 1fr) / auto;
+        text-align: center;
+    }
+
+    address{
+        grid-area: 1 / 1 / 2 / 2;
+        width: 100%;
+    }
+
+    address img{
+        margin: auto;
+        width: 50%;
+    }
+
+    form{ 
+        grid-area: 2 / 1 / 3 / 2;
+        padding: 0 5%;
+    }
+
+    form button{
+       margin: auto;
+    }
+    
+}
+
+@media (max-width: 414px){
+
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    
+    nav img{
+        min-width: 100px;
+        padding-left: 12px;
+    }
+
+    /* nav styling */
+
+    nav button, nav a {
+        padding: 8px;
+        margin: 8px;
+    }
+
+    nav .japaneseContent, nav .englishContent, nav button{
+        display: flex;
+        width: auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    nav .japaneseContent, nav .englishContent{
+        width: auto;
+    }
+
+    h1{
+        font-size: var(--step-3);
+        font-weight: bold;
+    }
+
+    p{
+        font-size: var(--step--1);
+    }
+
+    #introduction aside{
+        padding: 0 5% ;
+    }
+
+    .info {
+        grid-template: .5fr 1fr/ auto;
+    }
+
+    #practice{
+        grid-template: .5fr 3fr/ auto;
+    }   
+
+    footer{
+        grid-template: 1fr 1fr / auto;
+    }
+
+}
+
+
+   
