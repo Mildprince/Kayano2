@@ -79,7 +79,8 @@ nav {
     position: fixed;
     background-color:#515235;
     height: auto;
-    width: 100%
+    width: 100%;
+    z-index: 2;
 }
 
 nav button, nav a {
@@ -217,7 +218,8 @@ p{
     grid-area: 1 / 1 / 2 / 2;
     width: 100%;
     height: auto;
-    padding: 10%;
+    margin: 10%;
+    border-radius: 15px;
 }
 
 .info aside {
@@ -245,7 +247,7 @@ p{
     grid-area: 1 / 1 / 2 / 2;
     width: 100%;
     height: auto;
-    padding: 10%;
+    border-radius: 15px;
 }
 
 #Kayano aside {
@@ -388,11 +390,13 @@ textarea::placeholder {
     /* kayano section */
 
     #Kayano{
-        grid-template: repeat(2, 1fr) / auto;
+        grid-template: .5fr 1fr/ auto;
     }
 
     #Kayano img{
         grid-area: 1 / 1 / 2 / 2;
+        width: 50%;
+        margin: auto;
     }
 
     #Kayano aside {
