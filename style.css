@@ -60,13 +60,22 @@ button{
     justify-content: center;
 }
 
-body{
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
 .japaneseContent{
     font-size: var(--step--1);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    line-break: strict;
 }
 
 /* nav styling */
@@ -124,20 +133,18 @@ nav #buttons a {
 }
 
 nav .japaneseContent, nav .englishContent, nav button{
-    display: flex;
+    display: flex ;
     width: auto;
     justify-content: center;
     align-items: center;
     flex-shrink: 0; /* Add this for Firefox */
 }
-
-nav .japaneseContent{
-    width: 200px;
-}
-
-nav .englishContent{
-   width: 200px;
-    text-align: center;
+nav a#contact,
+nav .japaneseContent#contact,
+nav .englishContent#contact {
+    line-height: 1.4;
+    padding-top: 12px;
+    padding-bottom: 10px;
 }
 
 nav img{
@@ -360,11 +367,11 @@ textarea::placeholder {
     }
 
     h1{
-        font-size: var(--step-5);
+        font-size: var(--step-4);
     }
 
     p{
-        font-size: var(--step-0);
+        font-size: var(--step--1);
     }
     /*information section*/
 
@@ -433,7 +440,27 @@ textarea::placeholder {
     
 }
 
+@media(max-width: 700px){
+    h1{
+        font-size: var(--step-3);
+    }
+
+    p{
+        font-size: var(--step--2);
+    }
+
+    aside{
+        padding: 0;
+    }
+}
+
+
+
 @media (max-width: 414px){
+
+    p{
+        font-size: .6rem;
+    }
 
     html, body {
         max-width: 100%;
@@ -465,12 +492,8 @@ textarea::placeholder {
 
     h1{
         font-size: var(--step-3);
-        font-weight: bold;
     }
 
-    p{
-        font-size: var(--step--1);
-    }
 
     #introduction aside{
         padding: 0 5% ;
@@ -480,6 +503,14 @@ textarea::placeholder {
         grid-template: .5fr 1fr/ auto;
     }
 
+    .info img{
+        padding-top: 10%;
+    }
+
+    .info aside{
+        padding-bottom: 10%;
+    }
+
     #practice{
         grid-template: .5fr 3fr/ auto;
     }   
@@ -487,6 +518,9 @@ textarea::placeholder {
     footer{
         grid-template: 1fr 1fr / auto;
     }
+
+    
+
 
 }
 
