@@ -234,6 +234,11 @@ p{
     padding: 0 10%;
 }
 
+#practice img{
+   align-self: start !important;
+
+}
+
 /* kayano section */
 
 #bio{
